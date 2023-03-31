@@ -1,0 +1,49 @@
+{
+  "name": "smtp-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "start": "npm run build && better-npm-run prod",
+    "dev": "better-npm-run dev"
+  },
+  "betterScripts": {
+    "dev": {
+      "command": "nodemon  --exec npx babel-node ./src/app.js",
+      "env": {
+        "NODE_ENV": "development",
+        "PORT": 3000
+      }
+    },
+    "prod": {
+      "command": "node ./dist/app.js",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ihonore/smtp-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ihonore/smtp-server/issues"
+  },
+  "homepage": "https://github.com/ihonore/smtp-server#readme",
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/node": "^7.20.7",
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/register": "^7.21.0",
+    "better-npm-run": "^0.1.1",
+    "express": "^4.18.2"
+  }
+}
