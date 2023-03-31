@@ -7,7 +7,7 @@
     "contact": {
       "name": "RTILA Support",
       "email": "support@rtila.com",
-      "url": "rtila.com"
+      "url": "https://rtila.com"
     }
   },
   "schemes": ["http", "https"],
