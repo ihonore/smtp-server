@@ -3,22 +3,42 @@ import nodemailer from 'nodemailer';
 export class MailController {
   async sendEmail(req, res) {
     try {
+      const params = {
+        host: req.body.host || 'smtp.gmail.com',
+        port: req.body.port || 587,
+        user: req.body.username,
+        pass: req.body.password,
+        to: req.body.receiver,
+        subject: req.body.subject || 'Email from RTILA',
+        content: req.body.content
+      }
+      // console.log(params);
+
+      function isHtml(str) {
+        return /<[a-z][\s\S]*>/i.test(str);
+      }
       const transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 587,
+        host: params.host,
+        port: params.port,
         secure: false, // use TLS
         auth: {
-          user: 'bangzdoe0@gmail.com',
-          pass: 'tzdzrveatudhmawe'
+          user: params.user,
+          pass: params.pass
         }
       });
 
       const mailOptions = {
-        from: 'bangzdoe0@gmail.com',
-        to: 'ihonore03@gmail.com',
-        subject: 'Test RTILA NODE SERVER Email Subject',
-        text: 'Hello world!'
+        from: params.user,
+        to: params.to,
+        subject: params.subject,
       };
+
+      if (isHtml(params.content)) {
+        mailOptions.html = params.content
+      } else {
+        mailOptions.text = params.content
+      }
+      console.log(mailOptions);
 
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
