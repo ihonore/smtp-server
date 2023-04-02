@@ -1,0 +1,35 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "MAIL SMTP",
+    "description": "Allowing RTILA users to send emails",
+    "version": "1.0.0",
+    "contact": {
+      "name": "RTILA Support",
+      "email": "support@rtila.com",
+      "url": "https://rtila.com"
+    }
+  },
+  "schemes": ["http", "https"],
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "name": "DEV"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": ["Home"],
+        "summary": "Home",
+        "description": "Home",
+        "operationId": "getHome",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  }
+}
