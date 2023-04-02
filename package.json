@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "build": "babel src -d dist",
     "start": "npm run build && better-npm-run prod",
@@ -38,10 +37,12 @@
   "devDependencies": {
     "@babel/core": "^7.21.4",
     "@babel/node": "^7.20.7",
+    "@babel/plugin-syntax-import-assertions": "^7.20.0",
     "nodemon": "^2.0.22"
   },
   "dependencies": {
     "@babel/cli": "^7.21.0",
+    "@babel/plugin-transform-runtime": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
     "@babel/register": "^7.21.0",
     "better-npm-run": "^0.1.1",

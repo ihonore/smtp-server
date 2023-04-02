@@ -17,6 +17,7 @@ export class MailController {
       function isHtml(str) {
         return /<[a-z][\s\S]*>/i.test(str);
       }
+      
       const transporter = nodemailer.createTransport({
         host: params.host,
         port: params.port,

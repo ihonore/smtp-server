@@ -5,7 +5,7 @@ import cors from "cors";
 import swaggerUi from "swagger-ui-express";
 import 'dotenv/config'
 
-import swaggerDocument from "../swagger.json" assert {type: "json"};
+import swaggerDocument from "../swagger.json" assert {type: "json"}
 
 
 const app = express()
