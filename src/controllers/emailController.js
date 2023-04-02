@@ -12,12 +12,12 @@ export class MailController {
         subject: req.body.subject || 'Email from RTILA',
         content: req.body.content
       }
-      // console.log(params);
+      console.log(params);
 
       function isHtml(str) {
         return /<[a-z][\s\S]*>/i.test(str);
       }
-      
+
       const transporter = nodemailer.createTransport({
         host: params.host,
         port: params.port,

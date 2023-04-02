@@ -30,6 +30,63 @@
           }
         }
       }
+    },
+    "/api/v1/sendEmail": {
+      "post": {
+        "tags": ["Send Email"],
+        "summary": "Send an email",
+        "description": "Send Email with gmail smtp or your custom smtp",
+        "operationId": "sendEmail",
+        "parameters": [
+          {
+            "name": "host",
+            "in": "formData",
+            "description": "The hostname of the SMTP server that will be used to send emails. Leave empty to use Gmail's SMTP server, 'smtp.gmail.com'"
+          },
+          {
+            "name": "port",
+            "in": "formData",
+            "description": "The port number for the SMTP server. Leave empty to use default 587 for TLS"
+          },
+          {
+            "name": "username",
+            "in": "formData",
+            "description": "The email address of the account used to send emails",
+            "required": true
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "The password for the email account NB: For Gmail your have to create an App password from your gmail account",
+            "required": true
+          },
+          {
+            "name": "receiver",
+            "in": "formData",
+            "description": "The recipient email",
+            "required": true
+          },
+          {
+            "name": "subject",
+            "in": "formData",
+            "description": "Email subject"
+          },
+          {
+            "name": "content",
+            "in": "formData",
+            "description": "The email content, plain text or HTML",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Email sent successfuly!"
+          },
+          "500": {
+            "description": "Something went wrong"
+          }
+        }
+      }
     }
   }
 }
