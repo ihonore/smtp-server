@@ -1,4 +1,5 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 import routes from './routes/index.js';
 
 import cors from "cors";
@@ -15,6 +16,7 @@ const mode = process.env.NODE_ENV || 'development'
 try {
   app.use(cors());
   app.use(express.json())
+  app.use(bodyParser.urlencoded({ extended: false }));
 
   app.get("/", (req, res) => {
     res.json({ message: "🟢WELCOME TO THE RTILA MAIL-SMTP API🟢 add /api-docs at the end of Url to go to the documentation" });
