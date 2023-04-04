@@ -10,7 +10,7 @@
       "url": "https://rtila.com"
     }
   },
-  "schemes": ["http", "https"],
+  "schemes": ["https"],
   "servers": [
     {
       "url": "http://localhost:3000",
