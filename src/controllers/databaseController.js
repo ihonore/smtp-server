@@ -5,7 +5,7 @@ export class DatabaseController {
 
     let { host, user, password, database, query, dbType } = req.body;
 
-    if (dbType) dbType = dbType.toLowerCase();
+    dbType?.toLowerCase();
 
     if (dbType == 'mysql' || dbType == 'mariadb' || !dbType) {
 
