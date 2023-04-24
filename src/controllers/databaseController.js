@@ -35,7 +35,7 @@ export class DatabaseController {
       });
     } else if (dbType == 'postgresql') {
       //TO DO
-      res.status(500).json({ error: 'PostegreSQL' });
+      res.status(500).json({ error: 'PostegreSQL Not intagrated yet' });
     } else {
       res.status(500).json({ error: 'Database not supported, MySQL,MariaDB and PostgreSQL are currently supported DBs' });
     }
