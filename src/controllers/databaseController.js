@@ -16,6 +16,7 @@ export class DatabaseController {
         database,
       });
 
+
       connection.connect((err) => {
         if (err) {
           console.error('Error connecting to database:', err);
@@ -29,7 +30,7 @@ export class DatabaseController {
             res.status(500).json({ error: 'Error executing query, Please make sure your SQL query is Valid' });
             return;
           }
-
+          console.log(results)
           res.json({ results });
         });
       });
