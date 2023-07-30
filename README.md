@@ -6,7 +6,7 @@ This project provides a simple SMTP server API and a remote database connection 
 
 ## Endpoints
 
-### 1. Welcome Endpoint
+### 2. Welcome Endpoint
 
 - Endpoint: `https://rtila-smtp-server.onrender.com`
 - Method: GET
@@ -49,7 +49,7 @@ POST https://rtila-smtp-server.onrender.com/api/v1/sendEmail
   "content": "Hello, this is a test email!"
 }
 ```
-### 2. Connect to Remote Database
+### 3. Connect to Remote Database
 
 - Endpoint: `https://rtila-smtp-server.onrender.com/api/v1/connect-db`
 - Method: POST
