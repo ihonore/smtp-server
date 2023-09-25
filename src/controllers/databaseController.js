@@ -2,13 +2,7 @@ import mysql from 'mysql';
 
 export class DatabaseController {
   establishDbConnection(req, res) {
-
-<<<<<<< HEAD
-    let { host, user, password, database, query, dbType,port } = req.body;
-=======
     let { host, user, password, database, query, dbType, port } = req.body;
->>>>>>> c64be94fb493b149bd3c9a777dade0ef93375b80
-
     dbType?.toLowerCase();
 
     if (dbType == 'mysql' || dbType == 'mariadb' || !dbType) {
