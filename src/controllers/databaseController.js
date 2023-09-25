@@ -3,7 +3,7 @@ import mysql from 'mysql';
 export class DatabaseController {
   establishDbConnection(req, res) {
 
-    let { host, user, password, database, query, dbType } = req.body;
+    let { host, user, password, database, query, dbType,port } = req.body;
 
     dbType?.toLowerCase();
 
@@ -12,6 +12,7 @@ export class DatabaseController {
       const connection = mysql.createConnection({
         host,
         user,
+        port,
         password,
         database,
       });
