@@ -19,7 +19,7 @@ try {
   app.use(bodyParser.urlencoded({ extended: false }));
 
   app.get("/", (req, res) => {
-    res.json({ message: "🟢WELCOME TO THE RTILA MAIL-SMTP API🟢 add /api-docs at the end of Url to go to the documentation" });
+    res.json({ status:200,message: "🟢WELCOME TO THE RTILA MAIL-SMTP API🟢" });
   });
 
   app.use("/api/v1/", routes)
