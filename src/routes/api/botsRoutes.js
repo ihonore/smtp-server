@@ -7,5 +7,5 @@ const route = express.Router()
 const upload = multer();
 
 const botsController = new BotsController;
-route.post('/', upload.none(), botsController.runBot);
+route.get('/', upload.none(), botsController.runBot);
 export default route;
