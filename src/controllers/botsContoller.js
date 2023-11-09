@@ -12,7 +12,8 @@ export class BotsController {
             botPath += '/';
         }
 
-        const command = botPath + 'rtila-cli-win.exe';
+        // const command = botPath + 'rtila-cli-win.exe';
+        const command = botPath + 'rtila-cli-linux.sh';
 
         const { exec } = require('child_process');
         const options = {
